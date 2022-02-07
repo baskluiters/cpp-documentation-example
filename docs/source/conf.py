@@ -14,6 +14,15 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+# -- Project information -----------------------------------------------------
+
+project = 'MySuperProject'
+copyright = '2022, Qluit'
+author = 'Bas Kluiters'
+
+
+# -- Read the Docs -----------------------------------------------------
+
 import subprocess, os
 
 def configureDoxyfile(input_dir, output_dir):
@@ -21,6 +30,7 @@ def configureDoxyfile(input_dir, output_dir):
 	with open('Doxyfile.in', 'r') as file :
 		filedata = file.read()
 
+	filedata = filedata.replace('@CMAKE_PROJECT_NAME@', project)
 	filedata = filedata.replace('@DOXYGEN_INPUT_DIR@', input_dir)
 	filedata = filedata.replace('@DOXYGEN_OUTPUT_DIR@', output_dir)
 	
@@ -32,18 +42,11 @@ read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
 
 breathe_projects = {}
 if read_the_docs_build:
-	input_dir = '../CatCutifier'
-	output_dir = 'build'
+	input_dir = '../software/app'
+	output_dir = 'doxygen'
 	configureDoxyfile(input_dir, output_dir)
 	subprocess.call('doxygen', shell=True)
-	breathe_projects['CatCutifier'] = output_dir + '/xml'
-
-
-# -- Project information -----------------------------------------------------
-
-project = 'CatCutifier'
-copyright = '2019, Simon Brand'
-author = 'Simon Brand'
+	breathe_projects[project] = output_dir + '/xml'
 
 
 # -- General configuration ---------------------------------------------------
@@ -79,4 +82,4 @@ html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
 # Breathe Configuration
-breathe_default_project = "CatCutifier"
+breathe_default_project = project

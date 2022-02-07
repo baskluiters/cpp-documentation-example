@@ -1,0 +1,12 @@
+.my_super_project_?
+*/CMakeFiles/*
+*Makefile*
+docs/doxygen/*
+docs/sphinx/*
+*.cmake
+*.a
+docs/Doxyfile
+CMakeDoxyfile.in
+CMakeCache.txt
+MySuperProject
+NameTest
