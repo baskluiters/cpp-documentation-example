@@ -10,3 +10,6 @@ CMakeDoxyfile.in
 CMakeCache.txt
 MySuperProject
 NameTest
+_deps/*
+software/test/Testing/Temporary/*
+software/test/Test_Name
