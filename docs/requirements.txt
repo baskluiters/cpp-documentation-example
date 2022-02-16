@@ -1,2 +1,2 @@
-sphinx_rtd_theme
-breathe
+sphinx-rtd-theme==1.0.0
+breathe==4.32.0

@@ -1,0 +1,83 @@
+@startuml
+
+!$today = "2022/02/10"
+
+header My Super Project
+footer last updated on $today
+title My Super Project
+
+projectscale daily zoom 3
+' hide ressources names
+hide ressources footbox
+saturday are closed
+sunday are closed
+' Pasen
+2022/04/17 to 2022/04/18 is closed
+' Hemelvaart
+2022/05/26 to 2022/05/27 is closed
+' Pinksteren
+2022/06/06 is closed
+
+{Bas} is off on saturday
+{Bas} is off on sunday
+{Bas} is off on 2022/04/17 to 2022/04/18
+{Bas} is off on 2022/05/26 to 2022/05/27
+{Bas} is off on 2022/06/06
+
+Project starts the 1st of February 2022
+today is $today and is colored in Orange
+
+<style>
+ganttDiagram {
+  task {
+    BackGroundColor Lightblue
+    LineColor Blue
+    unstarted {
+      BackGroundColor Fuchsia 
+      LineColor FireBrick
+    }
+    started {
+        BackGroundColor Pink
+        LineColor Green 
+    }
+  }
+  timeline {
+'     LineColor transparent
+'     FontColor transparent
+  }
+}
+</style>
+
+[Kickoff] happens on 1st of February 2022
+
+-- Preparation --
+[Make software work] on {Bas} lasts 1 day and starts at [Kickoff]'s end and is 100% complete
+[Gathering hardware] on {Bas} lasts 1 day and starts at [Kickoff]'s end and is 100% complete
+then [Connect PCB] on {Marcel} lasts 1 days and is 100% complete
+then [Leds and buttons] on {Bas:50%} lasts 1 day and is 100% complete
+note bottom
+  Leds are working!
+end note
+
+-- Software Architecture  --
+[Baseline] on {Bas:50%} lasts 2 day and starts at [Kickoff]'s end and is 100% complete
+then [Code documentation] on {Bas:50%} lasts 1 day and is 100% complete
+note bottom
+  Setup Doxygen for code documentation
+end note
+then [Hardware abstraction layer] on {Bas:50%} lasts 1 days and is 0% complete
+
+-- Functional Prototyoe--
+[Start Proto] happens at [Leds and buttons]'s end
+then [Adapt Functional Prototype] lasts 2 days
+then [Gather minimum requirements] lasts 2 day
+note bottom
+  Using Sphinx needs
+end note
+
+@enduml
+
+
+   
+
+

@@ -8,6 +8,9 @@ See the documentation [here](https://cpp-documentation-example.readthedocs.io/en
 - [Python3](https://www.python.org/downloads/)
 - [CMake](https://cmake.org/download/)
 - [Doxygen](http://www.doxygen.nl/download.html)
+- Java
+- Graphviz
+- Drawio
 
 ## Activating
 

@@ -1,6 +1,7 @@
 # Required python packages to install using pip
 #   these packages NOT be installed in case of auto building using GitHub actions
 #   they are only meant for the local venv
-Sphinx
-sphinxcontrib-plantuml
-sphinxcontrib-drawio
+Sphinx==4.4.0
+sphinxcontrib-plantuml==0.22
+sphinxcontrib-drawio==0.0.14
+sphinxcontrib-needs==0.7.5
