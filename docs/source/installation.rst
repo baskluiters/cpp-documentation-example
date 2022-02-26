@@ -6,17 +6,30 @@ Documentation
 -------------
 
 The prerequisites to be able to build the documentation are mentioned below.
-The instructions for Windows are prefixed with W:, the instruction for OSX are prefixed with X:
+The instructions for Windows are prefixed with W:, the instruction for OSX/Linux/WSL
+are prefixed with X:, the instructions for Invoke are prefixed with an I:.
 
-* brew (Package manager for OSX)
 
-  - Open a terminal window on OSX
-  - Paste the line as shown on `the brew website <https://brew.sh>`_ and press enter
+* brew (Package manager for OSX/Linux/WSL)
+
+  - Follow the instructions on `the brew website <https://brew.sh>`_ 
 
 * Python3 (for running Sphinx)
   
   - W: Install from `python.org <https://www.python.org/download/releases/3.0/>`_
   - X: ``brew install python3``
+  
+
+All python packages are installed later on during activation. One of these packages is ``invoke``.
+Many of the commands below are also conveniently wrapped in ``tasks.py`` which is used by invoke. 
+If you install invoke in your global python3 environment, the following steps can be 
+a lot easier.
+
+  * ``pip install invoke``
+  * (``invoke --list``)
+  * ``invoke install``
+  
+You can also install the prerequisites manually
   
 * Graphviz (for dot/PlantUML)
 
@@ -31,7 +44,7 @@ The instructions for Windows are prefixed with W:, the instruction for OSX are p
 * DrawIO desktop
 
   - Download from `GitHub <https://github.com/jgraph/drawio-desktop/releases>`_
-  - X: ``brew install drawio``
+  - X: ``brew install drawio`` (if you do not want the desktop version)
 
 * CMake (OSX only)
 
@@ -41,6 +54,7 @@ To activate the project type:
 
 * W: ``activate.bat``
 * X: ``source activate.sh``
+* I: ``invoke activate``
 
 Now you can go to :doc:`building` to see how to build the documentation.
 

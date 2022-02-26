@@ -1,8 +1,6 @@
 # cpp-documentation-example
 An example of setting up Sphinx and Doxygen for C++ and building with CMake and Read the Docs
 
-See the documentation [here](https://cpp-documentation-example.readthedocs.io/en/latest/)
-
 ## Dependencies
 
 - [Python3](https://www.python.org/downloads/)
@@ -12,20 +10,24 @@ See the documentation [here](https://cpp-documentation-example.readthedocs.io/en
 - Graphviz
 - Drawio
 
+Once homebrew, python3 and invoke package are installed (for OSX/Linux/WSL):
+ `invoke install` will do the trick and install all remaining required packages thru `brew install ..`. 
+
 ## Activating
 
-Activate the environment by running `activate.sh` or `activate.bat`
-This also compiles the code and the documentation on OSX
+Activate the environment by running `source activate.sh` or `activate.bat`
+This also compiles the code and the documentation on OSX/Linux/WSL.
 
 ## Building
 
-Building the code as well as the documentation on OSX: `make`
+Building the code as well as the documentation on UX: `invoke build`
 Building the documentation on Windows: `cd docs\` and `make.bat`.
 
-## Rebuilding (OSX only)
+## Rebuilding
 
 To fix some dependencies: `make clean`
 And sometimes: `cmake --build .`
+Through invoke: `invoke build --clean` or `invoke clean build`
 
 ## Usage
 
@@ -35,7 +37,7 @@ If you want to reuse this as a starting point for your development:
 
 - Rename the virtual environment in `activate.*` and adapt `.gitignore` accordingly
 - run `deactivate`
-- remove the old virtual environment
+- remove the old virtual environment (`rm -rf .my\_super\_project`)
 - activate again
 
 
@@ -43,7 +45,15 @@ If you want to reuse this as a starting point for your development:
 
 - `CMakeLists.txt` : To adapt the name of the CMake project (used as: `@CMAKE_PROJECT_NAME@`)
 - `docs/source/conf.py` : Configuration of the Sphinx/Breathe documentation
-- `docs/make.bat` : Batchfile for Windows builds
+- `docs/make.bat` : Batchfile for native Windows builds
+- `docs/source/planning.uml` : Title of the plan as shown on the first page
+- `tasks.py` : name of the app to run when using `invoke run`
+
+### index.html
+
+The starting point of the generated documentation is actually in `docs/sphinx/`. 
+Shortcuts (called `index.html`) are made in the root and in `docs/` which redirect there.
+Viewing the documentation once built: `invoke view`
   
 
 

@@ -1,6 +1,6 @@
 @startuml
 
-!$today = "2022/02/10"
+!$today = "2022/02/26"
 
 header My Super Project
 footer last updated on $today
@@ -51,12 +51,12 @@ ganttDiagram {
 [Kickoff] happens on 1st of February 2022
 
 -- Preparation --
-[Make software work] on {Bas} lasts 1 day and starts at [Kickoff]'s end and is 100% complete
+[Create software baseline] on {Bas} lasts 1 day and starts at [Kickoff]'s end and is 100% complete
 [Gathering hardware] on {Bas} lasts 1 day and starts at [Kickoff]'s end and is 100% complete
-then [Connect PCB] on {Marcel} lasts 1 days and is 100% complete
-then [Leds and buttons] on {Bas:50%} lasts 1 day and is 100% complete
+then [Connect Arduino] on {Bas} lasts 1 days and is 100% complete
+then [Connect display] on {Bas:50%} lasts 1 day and is 100% complete
 note bottom
-  Leds are working!
+  Display is working!
 end note
 
 -- Software Architecture  --
@@ -68,7 +68,7 @@ end note
 then [Hardware abstraction layer] on {Bas:50%} lasts 1 days and is 0% complete
 
 -- Functional Prototyoe--
-[Start Proto] happens at [Leds and buttons]'s end
+[Start Proto] happens at [Connect display]'s end
 then [Adapt Functional Prototype] lasts 2 days
 then [Gather minimum requirements] lasts 2 day
 note bottom

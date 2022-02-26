@@ -1,17 +1,20 @@
 # Run with: source activate.sh
 
-if [ ! -d .my_super_project_x ]; then
-    python3 -m venv .my_super_project_x
+if [ ! -d .my_super_project ]; then
+    python3 -m venv .my_super_project
 fi
 
 if [ -z ${VIRTUAL_ENV} ]; then 
-    source ./.my_super_project_x/bin/activate
+    source ./.my_super_project/bin/activate
 fi
 if [ -z ${VIRTUAL_ENV} ]; then 
     exit 1
 fi
 
-export DRAWIO="/Applications/draw.io.app/Contents/MacOS/draw.io"
+# DRAWIO is to be set to the location of the executable
+if [ -f /Applications/draw.io.app/Contents/MacOS/draw.io ]; then
+    export DRAWIO="/Applications/draw.io.app/Contents/MacOS/draw.io"
+fi
 
 # checking required packages
 pip install -q --upgrade pip

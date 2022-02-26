@@ -1,4 +1,4 @@
-.my_super_project_?
+.my_super_project*
 */CMakeFiles/*
 *Makefile*
 docs/doxygen/*
@@ -9,7 +9,6 @@ docs/Doxyfile
 CMakeDoxyfile.in
 CMakeCache.txt
 MySuperProject
-NameTest
 _deps/*
 software/test/Testing/Temporary/*
-software/test/Test_Name
+software/test/TestAll

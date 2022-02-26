@@ -13,15 +13,16 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_executable(
-  Test_Name
+  TestAll
+  DummyTest.cpp
   NameTest.cpp
   ../app/Name.cpp
 )
 
 target_link_libraries(
-  Test_Name
+  TestAll
   gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(Test_Name)
+gtest_discover_tests(TestAll)
