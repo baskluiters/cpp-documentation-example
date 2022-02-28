@@ -18,9 +18,9 @@ def install(inv):
         "python3",
         "graphviz",
         "java",
-        "drawio", # This one is not installed if the desktopversion is already installed
         "cmake",
-        "graphviz",
+        "doxygen",
+        "sphinx",
     )
 
     for cask in casks_to_install:
